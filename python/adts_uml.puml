@@ -1,0 +1,75 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Abstract class Multiset {
+
++bool add(item: Any)
++None remove(item: Any)
++bool contains(item: Any)
++bool is_empty()
++int count(item: Any)
++int size()
+}
+
+class Tree {
+-_root: Any
+-_subtrees: List[Tree]
+
++bool is_empty()
++int __len__()
++int count(item: Any)
++bool delete_item(item: Any)
++None insert(item: Any)
+
+}
+
+class TreeMultiSet {
+-_tree: Tree
+
++bool add(item: Any)
++None remove(item: Any)
++bool contains(item: Any)
++bool is_empty()
++int count(item: Any)
++int size()
+}
+
+class ArrayListMultiset{
+-_list: list
+
++bool add(item: Any)
++None remove(item: Any)
++bool contains(item: Any)
++bool is_empty()
++int count(item: Any)
++int size()
+}
+
+class LinkedListMultiSet {
+-_front: _Node | None
+-_size: int
+
++bool add(item: Any)
++None remove(item: Any)
++bool contains(item: Any)
++bool is_empty()
++int count(item: Any)
++int size()
+
+}
+
+class _Node {
++item: Any
++next: _Node | None
+
+}
+
+
+Multiset <|-- TreeMultiSet
+Multiset <|-- ArrayListMultiset
+Multiset <|-- LinkedListMultiSet
+_Node *-- LinkedListMultiSet
+Tree *-- TreeMultiSet
+
+
+@enduml
