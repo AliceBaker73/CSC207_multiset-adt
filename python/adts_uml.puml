@@ -1,7 +1,7 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-Abstract class Multiset {
+interface Multiset {
 
 +bool add(item: Any)
 +None remove(item: Any)
@@ -9,6 +9,7 @@ Abstract class Multiset {
 +bool is_empty()
 +int count(item: Any)
 +int size()
+
 }
 
 class Tree {
@@ -19,8 +20,11 @@ class Tree {
 +int __len__()
 +int count(item: Any)
 +bool delete_item(item: Any)
++None _delete_root()
 +None insert(item: Any)
-
++bool insert_child(item: Any, parent: Any)
++bool __eq__(other: Tree)
++bool __contains__(item: Any)
 }
 
 class TreeMultiSet {
